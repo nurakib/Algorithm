@@ -48,6 +48,6 @@ int main(){
     addEdge(3, 5);
     addEdge(2, 4);
     addEdge(4, 5);
-    BFS(2, n);    // 2 is the source node
+    BFS(2, n);     // 2 is the source node
     return 0;
 }
