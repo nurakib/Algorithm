@@ -11,6 +11,7 @@ int main(){
 }
 
 void KMPsearch(string pat, string txt){
+    int flag = 1;
     int M = pat.size();
     int N = txt.size();
     int lps[M];
@@ -23,12 +24,14 @@ void KMPsearch(string pat, string txt){
         if(j == M){
             printf("Found pattern at index: %d\n", i - j);
             j = lps[j - 1];
+            flag = 0;
         }
         else if(i < N && pat[j] != txt[i]){
             if(j != 0) j = lps[j - 1];
             else i++;
         }
     }
+    if(flag) printf("Not Found!\n");
 }
 
 void computeLPSArray(string pat, int M, int lps[]){
